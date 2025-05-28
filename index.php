@@ -126,3 +126,17 @@ else if (
 else {
     echo "Os valores informados NÃO formam um triangulo";
 }
+
+
+echo "<br><br>";
+
+
+$multiplicador = 5;
+
+for ($i = 0; $i <= 10; $i++) {
+    $resultado = $multiplicador * $i;
+
+    echo "$multiplicador * $i = $resultado" . "<br>";
+}
+
+
