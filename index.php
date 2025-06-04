@@ -192,8 +192,8 @@ for ($numeroAvaliado = 3; $contPrimos < 5; $numeroAvaliado++) {
         $resto = $numero % 2;
         $divisaoExata = $resto == 0;
 
-        if ($divisaoExata && $divisor < $numeroAvaliado -1) {
-            continue;
+        if ($divisaoExata && $divisor < $penultimoNumero) {
+            break;
         }
 
         // implementar a logica
