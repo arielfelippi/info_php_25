@@ -189,7 +189,7 @@ for ($numeroAvaliado = 3; $contPrimos < 5; $numeroAvaliado++) {
 
     for($divisor = 2; $divisor <= $penultimoNumero; $divisor++) {
 
-        $resto = $numero % 2;
+        $resto = $numeroAvaliado % $divisor;
         $divisaoExata = $resto == 0;
 
         if ($divisaoExata && $divisor < $penultimoNumero) {
