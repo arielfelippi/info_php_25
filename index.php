@@ -176,16 +176,16 @@ for ($numero = 2; $contPares < 20; $numero++) {
     }
 }
 
-
-
 // Criar uma contagem regressiva de 10 - 0
 
 // Encontrar os 5 primeiros numeros primos;
 // 2, 3, 5, 7, 11, 13, 17, 19,
+$primos = [];
 $contPrimos = 0;
 
-for ($numeroAvaliado = 3; $contPrimos < 5; $numeroAvaliado++) {
+for ($numeroAvaliado = 3; $contPrimos < 10; $numeroAvaliado++) {
     $penultimoNumero = $numeroAvaliado - 1;
+    $ehPrimo = true;
 
     for($divisor = 2; $divisor <= $penultimoNumero; $divisor++) {
 
@@ -193,9 +193,52 @@ for ($numeroAvaliado = 3; $contPrimos < 5; $numeroAvaliado++) {
         $divisaoExata = $resto == 0;
 
         if ($divisaoExata && $divisor < $penultimoNumero) {
+            $ehPrimo = false;
             break;
         }
+    }
 
-        // implementar a logica
+    if ($ehPrimo) {
+        $contPrimos++;
+        // echo "O numero: $numeroAvaliado é primo!<br>";
+        $primos[] = $numeroAvaliado;
     }
 }
+
+/*
+
+N / 1
+
+N / N
+
+10 % 2
+10 % 3
+10 % 4
+10 % 5
+10 % 6
+10 % 7
+10 % 8
+10 % 9
+
+100233 (semente)
+
+senha123 (usuario)
+
+secretPass
+
+65a4sd564sa56d456s4ads65ad465as4d654sa65d4asd46sa54das
+
+*/
+
+// $primos = []; // array || vetor == vazio
+
+// $primos = array(2, 3, 5, 7, 11);
+// $primos = [2, 3, 5, 7, 11]; // 5 primeiros primos 
+//         0, 1, 2, 3, 4
+
+for ($i = 0; $i < count($primos); $i++) {
+    $primo = $primos[$i];
+
+    echo "Primo: $primo" . "<br>";
+}
+
