@@ -269,13 +269,16 @@ else {
   echo "A palavra $palavra NÃO é palíndromo.";
 }
 
-
 /*
  Procurar uma palavra no meio da frase e informar se encontrou a mesma.
 */
 
 $palavraProcurada = "curso";
-$frase = "Escola infoserv curso de PHP.";
+$frase = "Escola infoserv de PHP urso."; // curso
 
+$tamanho = strlen($frase) - 1;
 
+for ($i = 0; $i <= $tamanho; $i++) {
+
+}
 
