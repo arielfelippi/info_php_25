@@ -201,14 +201,14 @@ for ($numeroAvaliado = 3; $contPrimos < 10; $numeroAvaliado++) {
     if ($ehPrimo) {
         $contPrimos++;
         // echo "O numero: $numeroAvaliado é primo!<br>";
-        $primos[] = $numeroAvaliado;
+        $primos[] = $numeroAvaliado; //salvando primo
     }
 }
 
 /*
 
 N / 1
-
+...
 N / N
 
 10 % 2
@@ -241,4 +241,41 @@ for ($i = 0; $i < count($primos); $i++) {
 
     echo "Primo: $primo" . "<br>";
 }
+
+
+$palavra = "radar";
+$tamanho = strlen($palavra) - 1; // 3 - 1 == 2
+
+$a=0;
+$ehPalindromo = true;
+
+for ($i = $tamanho; $i >= 0; $i--) {
+    $letra_1 = $palavra[$a];
+    $letra_2 = $palavra[$i];
+    $letrasIguais =  $letra_1 == $letra_2; // r == r, a == a, d == d
+
+    if (!$letrasIguais) {
+        $ehPalindromo = false;
+        break;
+    }
+
+    $a++;
+}
+
+if ($ehPalindromo ) {
+    echo "A palavra $palavra é um palíndromo.";
+}
+else {
+  echo "A palavra $palavra NÃO é palíndromo.";
+}
+
+
+/*
+ Procurar uma palavra no meio da frase e informar se encontrou a mesma.
+*/
+
+$palavraProcurada = "curso";
+$frase = "Escola infoserv curso de PHP.";
+
+
 
