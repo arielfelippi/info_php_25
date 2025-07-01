@@ -324,3 +324,61 @@ if ($palavraEncontrada) {
 } else {
     echo "Não Encontrou.";
 }
+
+
+// algumas funcoes em PHP
+// count(); //  obtem o tamanho de um array/objeto
+// strlen($frase); //  obtem o tamanho de uma string
+// substr(); // obtem uma parte de uma string
+// ...
+
+$operador = "-";
+$valor1 =  10;
+$valor2 = 10;
+
+echo calculadora($valor1, $operador, $valor2);
+
+function calculadora($valor1, $operador, $valor2) {
+    switch ($operador) {
+        case "+":
+            $resultado = somar($valor1, $valor2);
+            break;
+        case "-":
+            $resultado = $valor1 - $valor2;
+            break;
+        case "*":
+            $resultado = $valor1 * $valor2;
+            break;
+        case "/":
+            $resultado = $valor1 / $valor2;
+            break;
+        default:
+            echo "Operador inválido.";
+            $resultado = 0;
+            break;
+    }
+}
+
+function somar($valor1, $valor2) {
+    $resultado = $valor1 + $valor2;
+
+    return $resultado;
+}
+
+
+
+/**
+ * Calendario: usuario vai informar uma data, validar essa data,
+ * caso for uma data invalida, retornar a proxima data correta.
+ * Ex.: 29/02/2025 => 01/03/2025
+ * Ex.: 31/04/2025 => 01/05/2025
+ * 
+ * Funcao PHP: explode;
+ */
+
+ $data = "29/02/2025";
+ $dataArray = explode("/", $data);
+
+ $dia = $dataArray[0];
+ $mes = $dataArray[1];
+ $ano = $dataArray[2];
