@@ -382,3 +382,15 @@ function somar($valor1, $valor2) {
  $dia = $dataArray[0];
  $mes = $dataArray[1];
  $ano = $dataArray[2];
+
+
+
+ /**
+  * Ordenar os arrays abaixo em ordem decrescente (maior para menor):
+  * $alfa = ["A", "B", "C", "D", "E"];
+  * $numeros = [10, 20, 30, 40, 50];
+  * Saida esperada: E, D, C, B, A
+  * 50, 40, 30, 20, 10
+
+  * Utilizar somente laço FOR. Não utilizar funcoes prontas do PHP para ordenacao.
+  */
