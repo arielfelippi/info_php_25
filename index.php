@@ -319,11 +319,11 @@ for ($i = 0; $i <= $tamanhoReal; $i++) {
     } 
 }
 
-if ($palavraEncontrada) {
-    echo "Encontrou a palavra procurada.";
-} else {
-    echo "Não Encontrou.";
-}
+// if ($palavraEncontrada) {
+//     echo "Encontrou a palavra procurada.";
+// } else {
+//     echo "Não Encontrou.";
+// }
 
 
 // algumas funcoes em PHP
@@ -383,8 +383,6 @@ function somar($valor1, $valor2) {
  $mes = $dataArray[1];
  $ano = $dataArray[2];
 
-
-
  /**
   * Ordenar os arrays abaixo em ordem decrescente (maior para menor):
   * $alfa = ["A", "B", "C", "D", "E"];
@@ -394,3 +392,58 @@ function somar($valor1, $valor2) {
 
   * Utilizar somente laço FOR. Não utilizar funcoes prontas do PHP para ordenacao.
   */
+
+function ordenarArray(array $dados, string $ordem) {
+
+    $tam = count($dados);
+
+    for($i = 0; $i < $tam - 1; $i++) {
+
+        for($j = 0; $j < $tam - 1; $j++) {
+
+            $proximoIndice = $j + 1;
+            $numeroAtual = $dados[$j];
+            $proxNumero = $dados[$proximoIndice];
+        
+            if ($numeroAtual < $proxNumero) {
+                $aux = $numeroAtual;
+                $numeroAtual = $proxNumero;
+                $proxNumero = $aux;
+        
+                $dados[$j] = $numeroAtual;
+                $dados[$proximoIndice] = $proxNumero;
+            }
+        } // fim FOR $j
+    } // fim FOR $i
+
+    return $dados;
+} // fim funcao
+
+function exibirDados(array $dados) {
+    $tam = count($dados);
+
+    for ($i = 0; $i < $tam; $i++) {
+        echo "Array ordenado desc (maior -> menor): $dados[$i]" . "<br>";
+    }
+
+    echo "<br>";
+}
+
+$numeros = [2,10, 20, 30, 60, 5,40, 50, 1, 500];
+$alfa = ["A", "B", "C", "D", "E"];
+
+$numerosOrdenados = ordenarArray($numeros);
+$alfa = ordenarArray($alfa);
+
+exibirDados($numerosOrdenados);
+exibirDados($alfa);
+
+
+/**
+ * Adicionar novo parametro na funcao de ordenarArray
+ * sendo ele $ordem. ASC ou DESC
+ * Se chamar a funcao com ASC => retornar os dados em crescente(asc)
+ * menor => maior
+ * Se chamar a funcao com DESC => retornar os dados em decrescente(desc)
+ * maior => menor
+ */
