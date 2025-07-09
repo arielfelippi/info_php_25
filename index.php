@@ -393,7 +393,7 @@ function somar($valor1, $valor2) {
   * Utilizar somente laço FOR. Não utilizar funcoes prontas do PHP para ordenacao.
   */
 
-function ordenarArray(array $dados, string $ordem) {
+function ordenarArray(array $dados, string $ordem = "asc") {
 
     $tam = count($dados);
 
@@ -404,15 +404,28 @@ function ordenarArray(array $dados, string $ordem) {
             $proximoIndice = $j + 1;
             $numeroAtual = $dados[$j];
             $proxNumero = $dados[$proximoIndice];
-        
-            if ($numeroAtual < $proxNumero) {
-                $aux = $numeroAtual;
-                $numeroAtual = $proxNumero;
-                $proxNumero = $aux;
-        
-                $dados[$j] = $numeroAtual;
-                $dados[$proximoIndice] = $proxNumero;
+
+            if ($ordem == "desc") {
+                if ($numeroAtual < $proxNumero) {
+                    $aux = $numeroAtual;
+                    $numeroAtual = $proxNumero;
+                    $proxNumero = $aux;
+            
+                    $dados[$j] = $numeroAtual;
+                    $dados[$proximoIndice] = $proxNumero;
+                }
+            } else {
+                if ($numeroAtual > $proxNumero) {
+                    $aux = $numeroAtual;
+                    $numeroAtual = $proxNumero;
+                    $proxNumero = $aux;
+
+                    $dados[$j] = $numeroAtual;
+                    $dados[$proximoIndice] = $proxNumero;
+                }
             }
+        
+
         } // fim FOR $j
     } // fim FOR $i
 
@@ -423,21 +436,15 @@ function exibirDados(array $dados) {
     $tam = count($dados);
 
     for ($i = 0; $i < $tam; $i++) {
-        echo "Array ordenado desc (maior -> menor): $dados[$i]" . "<br>";
+        echo "Array ordenado: $dados[$i]" . "<br>";
     }
 
     echo "<br>";
 }
 
-$numeros = [2,10, 20, 30, 60, 5,40, 50, 1, 500];
 $alfa = ["A", "B", "C", "D", "E"];
 
-$numerosOrdenados = ordenarArray($numeros);
-$alfa = ordenarArray($alfa);
-
-exibirDados($numerosOrdenados);
-exibirDados($alfa);
-
+$numeros = [2,10, 20, 30, 60, 5,40, 50, 1, 500];
 
 /**
  * Adicionar novo parametro na funcao de ordenarArray
@@ -447,3 +454,10 @@ exibirDados($alfa);
  * Se chamar a funcao com DESC => retornar os dados em decrescente(desc)
  * maior => menor
  */
+
+$numerosOrdenados = ordenarArray($numeros);
+exibirDados($numerosOrdenados);
+$numerosOrdenados = ordenarArray($numeros, "desc");
+exibirDados($numerosOrdenados);
+$numerosOrdenados = ordenarArray($numeros);
+exibirDados($numerosOrdenados);
