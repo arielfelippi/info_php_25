@@ -461,3 +461,29 @@ $numerosOrdenados = ordenarArray($numeros, "desc");
 exibirDados($numerosOrdenados);
 $numerosOrdenados = ordenarArray($numeros);
 exibirDados($numerosOrdenados);
+
+
+
+
+
+ /**
+  * Somar os arrays/vetores abaixo:
+  * $numerosA = [10, 20, 30, 40, 50];
+  * $numerosB = [5, 45, 37, 2, 25];
+  *
+  * Saida esperada: $soma[15, 65, 67, 42, 75]
+
+  * Utilizar somente laço FOR. Não utilizar funcoes prontas do PHP.
+  */
+  
+  
+  /**
+  * Multiplicar os arrays/vetores abaixo:
+  * $numerosA = [10, 20, 30, 40, 50];
+  * $numerosB = [5, 45, 37, 2, 25];
+  *
+  * Saida esperada: $produto[50, 900, 1110, 80, 1250]
+
+  * Utilizar somente laço FOR. Não utilizar funcoes prontas do PHP.
+  */
+
