@@ -392,10 +392,25 @@ function somar($valor1, $valor2) {
 
   * Utilizar somente laço FOR. Não utilizar funcoes prontas do PHP para ordenacao.
   */
+// $dados= []; // 0
+// count($dados); // 0
+// ordenarArray($dados); // asc
+// ordenarArray($dados, "asc");
+// ordenarArray($dados, "desc");
+// ordenarArray($dados, "xyz"); // troca para asc
 
 function ordenarArray(array $dados, string $ordem = "asc") {
 
-    $tam = count($dados);
+    if ($ordem != "asc" && $ordem != "desc") {
+        $ordem = "asc";
+    }
+
+    $tam = count($dados); // 0
+
+    if ($tam == 0) {
+        echo "o array informado esta vazio.";
+        return;
+    }
 
     for($i = 0; $i < $tam - 1; $i++) {
 
@@ -432,19 +447,19 @@ function ordenarArray(array $dados, string $ordem = "asc") {
     return $dados;
 } // fim funcao
 
-function exibirDados(array $dados) {
-    $tam = count($dados);
+// function exibirDados(array $dados) {
+//     $tam = count($dados);
 
-    for ($i = 0; $i < $tam; $i++) {
-        echo "Array ordenado: $dados[$i]" . "<br>";
-    }
+//     for ($i = 0; $i < $tam; $i++) {
+//         echo "Array ordenado: $dados[$i]" . "<br>";
+//     }
 
-    echo "<br>";
-}
+//     echo "<br>";
+// }
 
-$alfa = ["A", "B", "C", "D", "E"];
+// $alfa = ["A", "B", "C", "D", "E"];
 
-$numeros = [2,10, 20, 30, 60, 5,40, 50, 1, 500];
+// $numeros = [2,10, 20, 30, 60, 5,40, 50, 1, 500];
 
 /**
  * Adicionar novo parametro na funcao de ordenarArray
@@ -455,12 +470,12 @@ $numeros = [2,10, 20, 30, 60, 5,40, 50, 1, 500];
  * maior => menor
  */
 
-$numerosOrdenados = ordenarArray($numeros);
-exibirDados($numerosOrdenados);
-$numerosOrdenados = ordenarArray($numeros, "desc");
-exibirDados($numerosOrdenados);
-$numerosOrdenados = ordenarArray($numeros);
-exibirDados($numerosOrdenados);
+// $numerosOrdenados = ordenarArray($numeros);
+// exibirDados($numerosOrdenados);
+// $numerosOrdenados = ordenarArray($numeros, "desc");
+// exibirDados($numerosOrdenados);
+// $numerosOrdenados = ordenarArray($numeros);
+// exibirDados($numerosOrdenados);
 
 
 
@@ -476,7 +491,28 @@ exibirDados($numerosOrdenados);
   * Utilizar somente laço FOR. Não utilizar funcoes prontas do PHP.
   */
   
+$soma = [];
+$numerosA = [10, 20, 30, 40, 50];
+$numerosB = [5, 45, 37, 2, 25];
   
+for($i=0; $i < count($numerosA); $i++) {
+    
+    $somaElementos =  $numerosA[$i] + $numerosB[$i];
+
+    $soma[] = $somaElementos;
+}
+
+// $soma[15, 65, 67, 42, 75]
+for($i=0; $i < count($soma); $i++) {
+
+    echo $soma[$i] . "<br>";
+}
+  
+
+
+
+
+
   /**
   * Multiplicar os arrays/vetores abaixo:
   * $numerosA = [10, 20, 30, 40, 50];
