@@ -487,7 +487,7 @@ function ordenarArray(array $dados, string $ordem = "asc") {
   * $numerosB = [5, 45, 37, 2, 25];
   *
   * Saida esperada: $soma[15, 65, 67, 42, 75]
-
+  *
   * Utilizar somente laço FOR. Não utilizar funcoes prontas do PHP.
   */
   
@@ -508,10 +508,7 @@ for($i=0; $i < count($soma); $i++) {
     echo $soma[$i] . "<br>";
 }
   
-
-
-
-
+echo "<br>";
 
   /**
   * Multiplicar os arrays/vetores abaixo:
@@ -519,7 +516,53 @@ for($i=0; $i < count($soma); $i++) {
   * $numerosB = [5, 45, 37, 2, 25];
   *
   * Saida esperada: $produto[50, 900, 1110, 80, 1250]
-
+  *
   * Utilizar somente laço FOR. Não utilizar funcoes prontas do PHP.
   */
 
+$produto = [];
+$numerosA = [10, 20, 30, 40, 50];
+$numerosB = [5, 45, 37, 2, 25];
+  
+for($i=0; $i < count($numerosA); $i++) {
+    
+    $multiplicaElementos =  $numerosA[$i] * $numerosB[$i];
+
+    $produto[] = $multiplicaElementos;
+}
+
+// $produto[50, 900, 1110, 80, 1250]
+for($i=0; $i < count($produto); $i++) {
+
+    echo $produto[$i] . "<br>";
+}
+
+
+  /**
+  * Decompor um valor informado pelo usuario em reais
+  * informando quantas notas de cada representam esse valor. 
+  * $notas = [2, 5, 10, 20, 50, 100, 200];
+  * $valor = 170;
+  *
+  * Saida esperada: 1 nota de 100, 1 nota de 50 e 1 nota de 20. 
+  *
+  * Não utilizar funcoes prontas do PHP.
+  */
+$totalNotas = [
+    "200" => 0,
+    "100" => 0,
+    "50" => 0,
+    "20" => 0,
+    "10" => 0,
+    "5" => 0,
+    "2" => 0,
+];
+/*
+$totalNotas["200"] += 1;
+$totalNotas["100"] += 1;
+*/
+
+foreach ($totalNotas as $notas => $quantidade) {
+    // 1 nota de 100;
+    echo "$quantidade nota(s) de $notas. <br>";
+}
