@@ -537,6 +537,7 @@ for($i=0; $i < count($produto); $i++) {
     echo $produto[$i] . "<br>";
 }
 
+echo "<br>";
 
   /**
   * Decompor um valor informado pelo usuario em reais
@@ -545,7 +546,7 @@ for($i=0; $i < count($produto); $i++) {
   * $valor = 170;
   *
   * Saida esperada: 1 nota de 100, 1 nota de 50 e 1 nota de 20. 
-  *
+  * $totalNotas["100"] += 1;
   * Não utilizar funcoes prontas do PHP.
   */
 $totalNotas = [
@@ -557,10 +558,24 @@ $totalNotas = [
     "5" => 0,
     "2" => 0,
 ];
-/*
-$totalNotas["200"] += 1;
-$totalNotas["100"] += 1;
-*/
+$valor = 1057;
+$notas = [200, 100, 50, 20, 10, 5, 2];
+
+$tamanhoArray = count($notas); // 7
+
+for($i = 0; $i < $tamanhoArray; $i++) {
+    $nota = $notas[$i];
+
+    if ($valor >= $nota) {
+        $quantidade = (int) ($valor / $nota); // 1.2 => 1
+        $valor -= $nota * $quantidade;
+        $totalNotas[$nota] += $quantidade;
+    }
+
+    if ($valor == 0) {
+        break;
+    }
+}
 
 foreach ($totalNotas as $notas => $quantidade) {
     // 1 nota de 100;
