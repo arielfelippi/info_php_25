@@ -12,4 +12,13 @@ class Pessoa {
     public $escolaridade = "";
     public $telefone = "";
     public $email = "";
+
+    public function obterNome() {
+        return $this->nome;
+    }
+
+    public function editarNome($nome) {
+        return $this->nome = $nome;
+    }
+
 }
